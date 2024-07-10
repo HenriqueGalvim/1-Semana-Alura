@@ -1,4 +1,4 @@
-# praticaALuraCerto
+# Primeira Semana
 - Mensagem de Boas vindas
 - Menu de opções
   - Criar Produto
