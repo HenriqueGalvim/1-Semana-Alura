@@ -1,13 +1,14 @@
 ﻿// Estoque de uma loja
-string tituloSistema = " Bem vindo ao Sistema COMEX";
+string tituloSistema = "Bem vindo ao Sistema COMEX";
+Dictionary<string, Produto> produtos = new Dictionary<string, Produto>();
 
-Dictionary<string, Produto> produtos = new Dictionary<string, int>();
 void ListarProdutos()
 {
     foreach (var produto in produtos)
     {
-        Console.WriteLine($"\nNome: {produto.Key}");
-        Console.WriteLine($"Quantidade: {produto.Value}\n");
+        Console.WriteLine("\n------------------------------");
+        produto.Value.ExibirInformaçõesProduto();
+        Console.WriteLine("--------------------------------\n");
     }
 
     if (produtos.Count == 0)
@@ -19,7 +20,7 @@ void ListarNomesProdutos()
 {
     foreach (var produto in produtos)
     {
-        Console.WriteLine($"\nNome: {produto.Key}");
+        Console.WriteLine($"\nProduto: {produto.Key}");
     }
 
     if (produtos.Count == 0)
@@ -31,14 +32,28 @@ void ListarNomesProdutos()
 void AdicionarProduto()
 {
     Console.Write("Digite o nome do novo produto:");
-    string nome = Console.ReadLine()!; 
-    
-    Console.Write("\nDigite a quantidade que há desse produto: ");
+    string nome = Console.ReadLine()!;
+
+    Console.Write("Digite a descrição do novo produto:");
+    string descricao = Console.ReadLine()!;
+
+    Console.Write("Digite o preço unitário desse produto: ");
+    float preco_unitario = float.Parse(Console.ReadLine()!); // Não consigo usar o ponto, apenas a virgula funciona
+
+    Console.Write("Digite a quantidade que há desse produto: ");
     int quantidade = int.Parse(Console.ReadLine()!);
 
     if (nome == "")
     {
         Console.WriteLine("Digite um nome válido");
+    }
+    else if (descricao == "")
+    {
+        Console.WriteLine("Digite uma descrição válida");
+    }
+    else if (preco_unitario < 0)
+    {
+        Console.WriteLine("Digite um preço válido");
     }
     else if (quantidade < 0)
     {
@@ -46,8 +61,10 @@ void AdicionarProduto()
     }
     else
     {
-        produtos.Add(nome, quantidade);
-        Console.WriteLine($"\nProduto {nome} com a quantidade {quantidade} adicionado ao estoque");
+        Produto novo_protudo = new Produto(nome, descricao, preco_unitario, quantidade);
+        produtos.Add(nome,novo_protudo);
+        Console.WriteLine($"\nProduto Adicionado ao estoque");
+        novo_protudo.ExibirInformaçõesProduto();
     }
 
 }
@@ -63,7 +80,7 @@ void VerificarSituacaoProduto()
     {
         if(produtoCadastrados == produto)
         {
-            Console.WriteLine($"Produto: {produto} | Quantidade: {produtos[produto]}");
+            produtos[produto].ExibirInformaçõesProduto();
         }
         else
         {
