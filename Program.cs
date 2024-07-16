@@ -1,7 +1,7 @@
 ﻿// Estoque de uma loja
-string tituloSistema = "Sistema COMEX";
-Dictionary<string, int> produtos = new Dictionary<string, int>();
+string tituloSistema = " Bem vindo ao Sistema COMEX";
 
+Dictionary<string, Produto> produtos = new Dictionary<string, int>();
 void ListarProdutos()
 {
     foreach (var produto in produtos)
@@ -88,7 +88,7 @@ void ApagarProduto()
         produtos.Remove(produto);
         Console.WriteLine($"Produto {produto} removido do estoque");
     }
-}
+} 
 void Menu()
 {
     int controle = -1;
