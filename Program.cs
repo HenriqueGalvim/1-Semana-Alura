@@ -169,3 +169,16 @@ void LimparConsole()
 }
     
 Menu();
+
+/* Atividade do Endereço e Cliente com as relações entre elas
+ * Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");
+Endereco endereco2 = new("Amazonas", "Itacoatiara", "Prainha", "Avenida Parque", 2288, "Perto do Jamel");
+
+Cliente cliente1 = new("Henrique", "06086351201", "henrixe80@gmail.com", "dev", "92994292914", endereco1);
+Cliente cliente2 = new("Rafael", "06086367801", "rafael@gmail.com", "administracao", "92994292914", endereco2);
+
+cliente1.ExibirDadosCliente();
+
+Console.WriteLine("---------------------");
+
+cliente2.ExibirDadosCliente();*/
