@@ -16,7 +16,7 @@ internal class Produto
 
     public int Quantidade { get; }
 
-    public void ExibirInformaçõesProduto()
+    public virtual void ExibirInformaçõesProduto()
     {
         Console.WriteLine($"Nome do Produto: {Nome}");
         Console.WriteLine($"Descrição do Produto: {Descricao}");
