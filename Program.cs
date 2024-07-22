@@ -1,4 +1,6 @@
-﻿// Estoque de uma loja
+﻿using COMEX.Models;
+
+// Estoque de uma loja
 string tituloSistema = "Bem vindo ao Sistema COMEX";
 Dictionary<string, Produto> produtos = new Dictionary<string, Produto>();
 
