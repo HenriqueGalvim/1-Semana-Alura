@@ -1,6 +1,7 @@
-﻿namespace COMEX.Interfaces;
+﻿using COMEX.Menus;
+
+namespace COMEX.Interfaces;
 internal interface IIdentificar
 {
-    string Nome { get; }
-    string Identificacao { get; }
+    string Identificacao ();
 }

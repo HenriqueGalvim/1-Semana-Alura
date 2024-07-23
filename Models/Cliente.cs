@@ -6,7 +6,7 @@ internal class Cliente:IIdentificar
     public Cliente(string nome, string cpf, string email, string profissao, string telefone, Endereco endereco)
     {
         Nome = nome;
-        Identificacao = cpf;
+        Cpf = cpf;
         Email = email;
         Profissao = profissao;
         Telefone = telefone;
@@ -14,7 +14,7 @@ internal class Cliente:IIdentificar
     }
 
     public string Nome { get; }
-    public string Identificacao { get; }
+    public string Cpf { get; }
     public string Email { get; }
 
     public string Profissao { get; }
@@ -25,7 +25,7 @@ internal class Cliente:IIdentificar
     public void ExibirDadosCliente()
     {
         Console.WriteLine($"Dados do cliente {Nome}");
-        Console.WriteLine($"CPF: {Identificacao} ");
+        Console.WriteLine($"CPF: {Cpf} ");
         Console.WriteLine($"Email: {Email} ");
         Console.WriteLine($"Profissão: {Profissao} ");
         Console.WriteLine($"N° Telefone: {Telefone} ");
@@ -35,5 +35,9 @@ internal class Cliente:IIdentificar
         Console.WriteLine($"Rua: {Endereco.Rua} ");
         Console.WriteLine($"Numero da casa: {Endereco.Numero} ");
         Console.WriteLine($"Complemento: {Endereco.Complemento} ");
+    }
+    public string Identificacao()
+    {
+        return $"Nome: {Nome} | Isbn: {Cpf}";
     }
 }
