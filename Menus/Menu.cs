@@ -16,4 +16,11 @@ internal class Menu
     {
         LimparConsoleAdicionarTitulo();
     }
+
+    public void VoltarMenu()
+    {
+        Console.WriteLine("Digite uma tecla para voltar ao menu principal");
+        Console.ReadKey();
+        Console.Clear();
+    }
 }

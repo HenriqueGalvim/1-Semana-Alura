@@ -18,6 +18,7 @@ internal class ApagarProduto:ListarNomesProdutos
         {
             produtos.Remove(produto);
             Console.WriteLine($"Produto {produto} removido do estoque");
+            VoltarMenu();
         }
     }
 }

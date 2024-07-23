@@ -40,8 +40,8 @@ internal class AdicionarProduto:Menu
         {
             Produto novo_protudo = new Produto(nome, descricao, preco_unitario, quantidade);
             produtos.Add(nome, novo_protudo);
-            Console.WriteLine($"\nProduto Adicionado ao estoque");
-            novo_protudo.ExibirInformaçõesProduto();
+            Console.WriteLine($"\nProduto {novo_protudo.Nome} adicionado ao estoque");
+            VoltarMenu();
         }
     }
 }

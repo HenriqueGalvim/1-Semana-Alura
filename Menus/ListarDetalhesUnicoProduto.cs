@@ -18,5 +18,6 @@ internal class ListarDetalhesUnicoProduto:ListarNomesProdutos
                 produtos[produto].ExibirInformaçõesProduto();
             }
         }
+        VoltarMenu();
     }
 }

@@ -20,5 +20,6 @@ internal class ListarProdutos: Menu
                 Console.WriteLine("--------------------------------\n");
             }
         }
+        VoltarMenu();
     }
 }

@@ -18,5 +18,6 @@ internal class ListarNomesProdutos:Menu
                 Console.WriteLine($"\nNome do produto: {produto.Key}");
             }
         }
+        VoltarMenu();
     }
 }
