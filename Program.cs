@@ -1,5 +1,8 @@
-﻿using COMEX.Menus;
+﻿using System.Text.Json;
+using COMEX.Menus;
 using COMEX.Models;
+
+
 
 // Estoque de uma loja
 Dictionary<string, Produto> produtos = new Dictionary<string, Produto>();
@@ -10,6 +13,7 @@ opcoes.Add(3, new ListarDetalhesUnicoProduto());
 opcoes.Add(4, new ApagarProduto());
 opcoes.Add(5, new ListarPorPreco());
 opcoes.Add(6, new ListarProdutoPorNome());
+opcoes.Add(7, new BuscarPelaApiExterna());
 opcoes.Add(0, new Sair());
 
 void OpcoesMenu()
@@ -22,6 +26,7 @@ void OpcoesMenu()
     Console.WriteLine("4 - Remover produto");
     Console.WriteLine("5 - Listar produtos por Preço");
     Console.WriteLine("6 - Listar produtos pelo Nome");
+    Console.WriteLine("7 -Buscar pela API externa");
     Console.WriteLine("0 - sair\n");
     Console.Write("Resposta: ");
     int controle = int.Parse(Console.ReadLine()!);

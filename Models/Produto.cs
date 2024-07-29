@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace COMEX.Models;
 internal class Produto
 {
@@ -9,19 +11,52 @@ internal class Produto
         Quantidade = quantidade;
     }
 
+    [JsonPropertyName("title")]
     public string Nome { get; }
+
+    [JsonPropertyName("description")]
     public string Descricao { get; }
 
+    [JsonPropertyName("price")]
     public float PrecoUnitario { get; }
 
-    public int Quantidade { get; }
+    private int quantidade;
+
+    public int Quantidade
+    {
+        get
+        {
+            if (quantidade == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return quantidade;
+            }
+        }
+        set
+        {
+            quantidade = value;
+        }
+    }
 
     public virtual void ExibirInformaçõesProduto()
     {
-        Console.WriteLine($"Nome do Produto: {Nome}");
-        Console.WriteLine($"Descrição do Produto: {Descricao}");
-        Console.WriteLine($"Preço Unitário Produto: {PrecoUnitario}");
-        Console.WriteLine($"Quantidade do Produto: {Quantidade}");
+        try
+        {
+           
+            Console.WriteLine("\n**********************************\n");
+            Console.WriteLine($"Nome do Produto: {Nome}");
+            Console.WriteLine($"Descrição do Produto: {Descricao}");
+            Console.WriteLine($"Preço Unitário Produto: {PrecoUnitario}");
+            Console.WriteLine($"Quantidade do Produto: {Quantidade}");
+            Console.WriteLine("\n**********************************\n");
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine("Erro: ",e);
+        }
     }
 
 }

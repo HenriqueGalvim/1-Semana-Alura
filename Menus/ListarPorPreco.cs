@@ -11,6 +11,8 @@ internal class ListarPorPreco:Menu
             from produto in produtos orderby produto.Value.PrecoUnitario descending
             select produto;
 
+        // queryAllProdutos.ToDictionary(); -> Teste
+
         foreach (var produto in queryAllProdutos)
         {
             Console.WriteLine("\n------------------------------");
