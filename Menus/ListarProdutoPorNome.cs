@@ -2,22 +2,30 @@
 
 namespace COMEX.Menus;
 
-internal class ListarProdutoPorNome:Menu
+internal class ListarProdutoPorNome : Menu
 {
-    public override void Executar(Dictionary<string, Produto> produtos)
+    public override void ExecutarAsync(Dictionary<string, Produto> produtos)
     {
-        base.Executar(produtos);
-        var queryAllProdutos =
-            from produto in produtos
-            orderby produto.Value.Nome ascending
-            select produto;
-
-        foreach (var produto in queryAllProdutos)
+        try
         {
-            Console.WriteLine("\n------------------------------");
-            produto.Value.ExibirInformaçõesProduto();
-            Console.WriteLine("--------------------------------\n");
+            base.ExecutarAsync(produtos);
+            var queryAllProdutos =
+                from produto in produtos
+                orderby produto.Value.Nome ascending
+                select produto;
+
+            foreach (var produto in queryAllProdutos)
+            {
+                Console.WriteLine("\n------------------------------");
+                produto.Value.ExibirInformaçõesProduto();
+                Console.WriteLine("--------------------------------\n");
+            }
+            VoltarMenu();
         }
-        VoltarMenu();
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+
     }
 }

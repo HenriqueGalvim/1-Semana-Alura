@@ -1,22 +1,19 @@
-﻿using System.Text.Json;
-using COMEX.Menus;
+﻿using COMEX.Menus;
 using COMEX.Models;
 
-
-
 // Estoque de uma loja
-Dictionary<string, Produto> produtos = new Dictionary<string, Produto>();
+Dictionary<string, Produto> produtosNoEstoque = new ();
 Dictionary<int, Menu> opcoes = new();
-opcoes.Add(1, new ListarProdutos());
-opcoes.Add(2, new AdicionarProduto());
-opcoes.Add(3, new ListarDetalhesUnicoProduto());
-opcoes.Add(4, new ApagarProduto());
-opcoes.Add(5, new ListarPorPreco());
-opcoes.Add(6, new ListarProdutoPorNome());
-opcoes.Add(7, new BuscarPelaApiExterna());
-opcoes.Add(0, new Sair());
+opcoes.Add(key: 1, new ListarProdutos());
+opcoes.Add(key: 2, new AdicionarProduto());
+opcoes.Add(key: 3, new ListarDetalhesUnicoProduto());
+opcoes.Add(key: 4, new ApagarProduto());
+opcoes.Add(key: 5, new ListarPorPreco());
+opcoes.Add(key: 6, new ListarProdutoPorNome());
+opcoes.Add(key: 7, new BuscarPelaApiExterna());
+opcoes.Add(key: 0, new Sair());
 
-void OpcoesMenu()
+  async Task OpcoesMenuAsync()
 {
     Console.WriteLine($"\n------------- COMEX -------------\n");
     Console.WriteLine("Digite as seguintes opções para efetuar a operação:");
@@ -26,17 +23,19 @@ void OpcoesMenu()
     Console.WriteLine("4 - Remover produto");
     Console.WriteLine("5 - Listar produtos por Preço");
     Console.WriteLine("6 - Listar produtos pelo Nome");
-    Console.WriteLine("7 -Buscar pela API externa");
+    Console.WriteLine("7 - Buscar pela API externa");
     Console.WriteLine("0 - sair\n");
     Console.Write("Resposta: ");
     int controle = int.Parse(Console.ReadLine()!);
 
-    if (opcoes.ContainsKey(controle))
+    if  (opcoes.ContainsKey(controle))
     {
         Menu menuASerExibido = opcoes[controle];
-        menuASerExibido.Executar(produtos);
+        menuASerExibido.ExecutarAsync(produtosNoEstoque);
 
-        if (controle > 0) OpcoesMenu();
+        if (controle > 0){
+            await OpcoesMenuAsync();
+        }
     }
     else
     {
@@ -45,7 +44,7 @@ void OpcoesMenu()
 }
 
 
-OpcoesMenu();
+await OpcoesMenuAsync();
 
 /* Atividade do Endereço e Cliente com as relações entre elas
  * Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");

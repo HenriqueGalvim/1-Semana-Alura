@@ -4,9 +4,9 @@ namespace COMEX.Menus;
 
 internal class AdicionarProduto:Menu
 {
-    public override void Executar(Dictionary<string, Produto> produtos)
+    public override void ExecutarAsync(Dictionary<string, Produto> produtos)
     {
-        base.Executar(produtos);
+        base.ExecutarAsync(produtos);
 
         Console.Write("Digite o nome do novo produto:");
         string nome = Console.ReadLine()!;

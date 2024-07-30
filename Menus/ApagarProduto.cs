@@ -4,9 +4,9 @@ namespace COMEX.Menus;
 
 internal class ApagarProduto:ListarNomesProdutos
 {
-    public override void Executar(Dictionary<string, Produto> produtos)
+    public override void ExecutarAsync(Dictionary<string, Produto> produtos)
     {
-        base.Executar(produtos);
+        base.ExecutarAsync(produtos);
         Console.Write("\nDigite o nome do produto a ser removido: ");
         string produto = Console.ReadLine()!;
 
