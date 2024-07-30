@@ -32,8 +32,9 @@ opcoes.Add(key: 0, new Sair());
     {
         Menu menuASerExibido = opcoes[controle];
         menuASerExibido.ExecutarAsync(produtosNoEstoque);
-
-        if (controle > 0){
+        Console.Clear();
+        if (controle > 0)
+        {
             await OpcoesMenuAsync();
         }
     }

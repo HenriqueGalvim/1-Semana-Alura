@@ -4,68 +4,55 @@ using COMEX.Models;
 
 internal class BuscarPelaApiExterna : Menu
 {
-    public override async void ExecutarAsync(Dictionary<string, Produto> produtosRecebidos)
+    public override void ExecutarAsync(Dictionary<string, Produto> produtosRecebidos)
     {
         base.ExecutarAsync(produtosRecebidos);
 
         try
         {
-            var resultados = await Task.FromResult(ListarTodosOsDados());
+            Console.WriteLine("\n-API EXTERNA \n");
+            Console.WriteLine("\nDigite o numero para realizar cada ação");
+            Console.WriteLine("\n1- Listar todos os produtos da API");
+            Console.WriteLine("\n2- Listar todos os produtos com o maior preço da API");
+            Console.WriteLine("\n3- Listar todos os produtos com o menor preço da API");
+            Console.WriteLine("\n4- Listar todos os produtos pela ordem alfabética da API");
+            Console.WriteLine("\n5- Listar todos os produtos pela ordem alfabética descrente da API");
+            Console.Write("\nResposta: ");
+            int controlador = int.Parse(Console.ReadLine()!);
+            Task resultados;
+            Console.Clear();
+            Console.WriteLine("\nCarregando.....\n\n");
+            Console.WriteLine(controlador);
+            switch (controlador)
+            {
+                case 1:
+                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDados());
+                    break;
+                case 2:
+                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloMaiorPreco());
+                    break;
+                case 3:
+                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloMenorPreco());
+                    break;
+                case 4:
+                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloNomeEmOrdemAlfabetica());
+                    break;
+                case 5:
+                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloNomeEmOrdemAlfabeticaDecrescente());
+                    break;
+                default:
+                    Console.WriteLine("\nComando inválido");
+                    break;
+            }
+            Thread.Sleep(3000);
+            VoltarMenu();
         }
         catch (Exception ex)
         {
             Console.WriteLine("Erro: ", ex.Message);
         }
-        finally
-        {
-            Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
-            Console.ReadKey();
-            Console.Clear();
-        }
     }
 
-    private static Task<List<Produto>> BuscarDadosAsync()
-    {
-        Task<List<Produto>> resultados = GetApiDados();
-        return resultados;
-    }
 
-    public static async Task ListarTodosOsDados()
-    {
-        try
-        {
-            Console.WriteLine("Carregando....");
-            using (HttpClient client = new HttpClient())
-            {
-                string resposta = await client.GetStringAsync("https://fakestoreapi.com/products");
-                var deserializandoJson = JsonSerializer.Deserialize<List<Produto>>(resposta!);
-                foreach (var item in deserializandoJson!)
-                {
-                    item.ExibirInformaçõesProduto();
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Erro: {ex.Message}");
-        }
-    }
 
-    public static async Task<List<Produto>> GetApiDados()
-    {
-        try
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                string resposta = await client.GetStringAsync("https://fakestoreapi.com/products");
-                List<Produto>? deserializandoJson = JsonSerializer.Deserialize<List<Produto>>(resposta!);
-                return new List<Produto>(deserializandoJson!).ToList();
-            }
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Erro: {ex.Message}");
-            return new List<Produto>();
-        }
-    }
 }
