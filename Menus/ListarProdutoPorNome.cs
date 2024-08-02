@@ -4,11 +4,11 @@ namespace COMEX.Menus;
 
 internal class ListarProdutoPorNome : Menu
 {
-    public override void ExecutarAsync(Dictionary<string, Produto> produtos)
+    public override async Task  ExecutarAsync(Dictionary<string, Produto> produtos)
     {
         try
         {
-            base.ExecutarAsync(produtos);
+            await base.ExecutarAsync(produtos);
             var queryAllProdutos =
                 from produto in produtos
                 orderby produto.Value.Nome ascending

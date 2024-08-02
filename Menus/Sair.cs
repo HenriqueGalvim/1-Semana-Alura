@@ -4,9 +4,9 @@ namespace COMEX.Menus;
 
 internal class Sair:Menu
 {
-    public override void ExecutarAsync(Dictionary<string, Produto> produtos)
+    public override async Task ExecutarAsync(Dictionary<string, Produto> produtos)
     {
-        base.ExecutarAsync(produtos);
+        await base.ExecutarAsync(produtos);
         Console.WriteLine("Saindo do sistema");
     }
 }

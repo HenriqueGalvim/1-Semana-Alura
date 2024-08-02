@@ -5,14 +5,14 @@ namespace COMEX.Menus;
 internal class Menu 
 { 
 
-    public static void LimparConsoleAdicionarTitulo()
+    public static async Task LimparConsoleAdicionarTitulo()
     {
         Thread.Sleep(1000);
         Console.Clear();
         Console.WriteLine($"\n------------- Sistema COMEX -------------\n");
     }
 
-    public virtual void ExecutarAsync(Dictionary<string, Produto> produtos)
+    public virtual async Task ExecutarAsync(Dictionary<string, Produto> produtos)
     {
         LimparConsoleAdicionarTitulo();
     }

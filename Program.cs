@@ -31,7 +31,7 @@ opcoes.Add(key: 0, new Sair());
     if  (opcoes.ContainsKey(controle))
     {
         Menu menuASerExibido = opcoes[controle];
-        menuASerExibido.ExecutarAsync(produtosNoEstoque);
+        await menuASerExibido.ExecutarAsync(produtosNoEstoque); // O problema está aqui, precisa ser await todos os executar e retornar task n void
         Console.Clear();
         if (controle > 0)
         {

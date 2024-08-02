@@ -4,9 +4,9 @@ using COMEX.Models;
 
 internal class BuscarPelaApiExterna : Menu
 {
-    public override void ExecutarAsync(Dictionary<string, Produto> produtosRecebidos)
+    public override async Task ExecutarAsync(Dictionary<string, Produto> produtosRecebidos)
     {
-        base.ExecutarAsync(produtosRecebidos);
+        await base.ExecutarAsync(produtosRecebidos);
 
         try
         {
@@ -22,34 +22,37 @@ internal class BuscarPelaApiExterna : Menu
             Task resultados;
             Console.Clear();
             Console.WriteLine("\nCarregando.....\n\n");
-            Console.WriteLine(controlador);
+
             switch (controlador)
             {
                 case 1:
-                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDados());
+                    resultados = await Task.FromResult(FiltrosApiExterna.ListarTodosOsDados());
                     break;
+
                 case 2:
-                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloMaiorPreco());
+                    resultados = await Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloMaiorPreco());
                     break;
                 case 3:
-                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloMenorPreco());
+                    resultados = await Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloMenorPreco());
                     break;
                 case 4:
-                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloNomeEmOrdemAlfabetica());
+                    resultados = await Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloNomeEmOrdemAlfabetica());
                     break;
                 case 5:
-                    resultados = Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloNomeEmOrdemAlfabeticaDecrescente());
+                    resultados = await Task.FromResult(FiltrosApiExterna.ListarTodosOsDadosPeloNomeEmOrdemAlfabeticaDecrescente());
                     break;
                 default:
                     Console.WriteLine("\nComando inválido");
                     break;
             }
-            Thread.Sleep(3000);
-            VoltarMenu();
         }
         catch (Exception ex)
         {
             Console.WriteLine("Erro: ", ex.Message);
+        }
+        finally
+        {
+            VoltarMenu();
         }
     }
 

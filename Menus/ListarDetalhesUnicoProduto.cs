@@ -4,9 +4,9 @@ namespace COMEX.Menus;
 
 internal class ListarDetalhesUnicoProduto:ListarNomesProdutos
 {
-    public override void ExecutarAsync(Dictionary<string, Produto> produtos)
+    public override async Task ExecutarAsync(Dictionary<string, Produto> produtos)
     {
-        base.ExecutarAsync(produtos);
+        await base.ExecutarAsync(produtos);
 
         Console.Write("\nDigite o nome do produto a ser verificado: ");
         string produto = Console.ReadLine()!;
