@@ -5,7 +5,7 @@ internal class Pedido
     public Pedido(Cliente cliente, List<ItemDePedido> itens)
     {
         Cliente = cliente;
-        Itens = itens;
+        Itens = new(itens);
     }
 
     public Cliente Cliente { get; }
@@ -16,7 +16,11 @@ internal class Pedido
             DateTime data = DateTime.Now;
 
             return data;
-        } 
+        }
+        set
+        {
+
+        }
     }
 
     public List<ItemDePedido> Itens { get; }
@@ -37,7 +41,7 @@ internal class Pedido
             Console.WriteLine("\n**********************************\n");
             Console.WriteLine("\n****** Exibir Detalhes do Pedido ******\n");
             Console.WriteLine($"Nome do Produto: {Cliente.Nome}");
-            Console.WriteLine($"Quantidade do Produto: {Data}");
+            Console.WriteLine($"Data do Pedido: {Data}");
             Console.WriteLine($"Lista de itens: ");
             foreach (var item in Itens)
             {
@@ -51,5 +55,12 @@ internal class Pedido
         {
             Console.WriteLine("Erro: ", e);
         }
+    }
+
+    public void AdicionarItem(ItemDePedido item)
+    {
+        Itens.Add(item);
+        Data = DateTime.Now;
+        Console.WriteLine($"{item.Produto.Nome} Adicionado na Lista de Itens");
     }
 }
