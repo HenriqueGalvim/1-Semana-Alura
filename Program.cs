@@ -45,7 +45,7 @@ opcoes.Add(key: 0, new Sair());
 }
 
 
-await OpcoesMenuAsync();
+// await OpcoesMenuAsync();
 
 /* Atividade do Endereço e Cliente com as relações entre elas
  * Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");
@@ -59,3 +59,8 @@ cliente1.ExibirDadosCliente();
 Console.WriteLine("---------------------");
 
 cliente2.ExibirDadosCliente();*/
+
+//Atividade Semana 5 - 2 - Criar a classe ItemDePedido
+/*Produto p1 = new("Coca-cola", "Refrigerante muito bom", 3, 10);
+ItemDePedido itemDePedido = new(p1,2,3);
+itemDePedido.Produto.ExibirInformaçõesProduto();*/
