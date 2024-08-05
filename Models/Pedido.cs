@@ -48,7 +48,7 @@ internal class Pedido
                 Console.Write($"\n - {item.Produto.Nome}");
             }
 
-            Console.WriteLine($"Preço Total: {Total}");
+            Console.WriteLine($"\n Preço Total: {Total}");
             Console.WriteLine("\n**********************************\n");
         }
         catch (Exception e)

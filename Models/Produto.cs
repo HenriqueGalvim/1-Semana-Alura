@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 namespace COMEX.Models;
 internal class Produto
 {
-    public Produto(string nome, string descricao, float precoUnitario, int quantidade)
+    public Produto(string nome, string descricao, decimal precoUnitario, int quantidade)
     {
         Nome = nome;
         Descricao = descricao;
@@ -18,7 +18,7 @@ internal class Produto
     public string Descricao { get; }
 
     [JsonPropertyName("price")]
-    public float PrecoUnitario { get; }
+    public decimal PrecoUnitario { get; }
 
     private int quantidade;
 

@@ -1,6 +1,18 @@
 ﻿using COMEX.Menus;
 using COMEX.Models;
 
+// Clientes cadastrados
+List<Cliente> clientes = new();
+List<Pedido> listaDePedidos = new();
+Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");
+Endereco endereco2 = new("Amazonas", "Itacoatiara", "Prainha", "Avenida Parque", 2288, "Perto do Jamel");
+
+Cliente cliente1 = new("Henrique", "06086351201", "henrixe80@gmail.com", "dev", "92994292914", endereco1);
+Cliente cliente2 = new("Rafael", "57206352", "rafael@gmail.com", "administracao", "92994292914", endereco2);
+
+clientes.Add(cliente1);
+clientes.Add(cliente2);
+
 // Estoque de uma loja
 Dictionary<string, Produto> produtosNoEstoque = new ();
 Dictionary<int, Menu> opcoes = new();
@@ -11,6 +23,8 @@ opcoes.Add(key: 4, new ApagarProduto());
 opcoes.Add(key: 5, new ListarPorPreco());
 opcoes.Add(key: 6, new ListarProdutoPorNome());
 opcoes.Add(key: 7, new BuscarPelaApiExterna());
+opcoes.Add(key: 8, new CriarNovoPedido(clientes,listaDePedidos));
+opcoes.Add(key: 9, new ListarPedidos(listaDePedidos));
 opcoes.Add(key: 0, new Sair());
 
   async Task OpcoesMenuAsync()
@@ -24,6 +38,8 @@ opcoes.Add(key: 0, new Sair());
     Console.WriteLine("5 - Listar produtos por Preço");
     Console.WriteLine("6 - Listar produtos pelo Nome");
     Console.WriteLine("7 - Buscar pela API externa");
+    Console.WriteLine("8 - Criar novo Pedido");
+    Console.WriteLine("9 - Listar Pedidos");
     Console.WriteLine("0 - sair\n");
     Console.Write("Resposta: ");
     int controle = int.Parse(Console.ReadLine()!);
@@ -45,14 +61,10 @@ opcoes.Add(key: 0, new Sair());
 }
 
 
-// await OpcoesMenuAsync();
+await OpcoesMenuAsync();
 
 //Atividade do Endereço e Cliente com as relações entre elas
-/*Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");
-Endereco endereco2 = new("Amazonas", "Itacoatiara", "Prainha", "Avenida Parque", 2288, "Perto do Jamel");
-
-Cliente cliente1 = new("Henrique", "06086351201", "henrixe80@gmail.com", "dev", "92994292914", endereco1);
-Cliente cliente2 = new("Rafael", "06086367801", "rafael@gmail.com", "administracao", "92994292914", endereco2);*/
+/**/
 
 /*cliente1.ExibirDadosCliente();
 

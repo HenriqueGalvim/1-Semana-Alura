@@ -15,7 +15,7 @@ internal class AdicionarProduto:Menu
         string descricao = Console.ReadLine()!;
 
         Console.Write("Digite o preço unitário desse produto: ");
-        float preco_unitario = float.Parse(Console.ReadLine()!); // Não consigo usar o ponto, apenas a virgula funciona
+        decimal preco_unitario = decimal.Parse(Console.ReadLine()!); // Não consigo usar o ponto, apenas a virgula funciona
 
         Console.Write("Digite a quantidade que há desse produto: ");
         int quantidade = int.Parse(Console.ReadLine()!);

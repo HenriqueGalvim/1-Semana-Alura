@@ -7,7 +7,7 @@ internal class Livro : Produto, IIdentificar
 {
     public string Isbn { get;}
     public int QuantidadePaginas { get; }
-    public Livro(string nome, string descricao, float precoUnitario, int quantidade, string isbn, int quantidadePaginas) : base(nome, descricao, precoUnitario, quantidade)
+    public Livro(string nome, string descricao, decimal precoUnitario, int quantidade, string isbn, int quantidadePaginas) : base(nome, descricao, precoUnitario, quantidade)
     {
         Isbn = isbn;
         QuantidadePaginas = quantidadePaginas;

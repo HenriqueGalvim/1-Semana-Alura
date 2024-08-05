@@ -2,11 +2,11 @@
 
 internal class ItemDePedido
 {
-    public ItemDePedido(Produto produto, int quantidade, decimal precoUnitario)
+    public ItemDePedido(Produto produto)
     {
         Produto = produto;
-        Quantidade = quantidade;
-        PrecoUnitario = precoUnitario;
+        Quantidade = produto.Quantidade;
+        PrecoUnitario = produto.PrecoUnitario;
     }
 
     public Produto Produto { get; }
