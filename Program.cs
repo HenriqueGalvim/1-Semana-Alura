@@ -47,14 +47,14 @@ opcoes.Add(key: 0, new Sair());
 
 // await OpcoesMenuAsync();
 
-/* Atividade do Endereço e Cliente com as relações entre elas
- * Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");
+//Atividade do Endereço e Cliente com as relações entre elas
+Endereco endereco1 = new("Amazonas", "Itacoatiara", "Iracy", "Joaquim Alves Simões", 3088, "KitNet da Litiara");
 Endereco endereco2 = new("Amazonas", "Itacoatiara", "Prainha", "Avenida Parque", 2288, "Perto do Jamel");
 
 Cliente cliente1 = new("Henrique", "06086351201", "henrixe80@gmail.com", "dev", "92994292914", endereco1);
 Cliente cliente2 = new("Rafael", "06086367801", "rafael@gmail.com", "administracao", "92994292914", endereco2);
 
-cliente1.ExibirDadosCliente();
+/*cliente1.ExibirDadosCliente();
 
 Console.WriteLine("---------------------");
 
@@ -62,5 +62,18 @@ cliente2.ExibirDadosCliente();*/
 
 //Atividade Semana 5 - 2 - Criar a classe ItemDePedido
 /*Produto p1 = new("Coca-cola", "Refrigerante muito bom", 3, 10);
+Produto p2 = new("Guarana", "Refrigerante muito bommmmmmm", 5, 20);
+Produto p3 = new("Fanta", "Refrigerante muito bommmmmm", 2, 18);
+
 ItemDePedido itemDePedido = new(p1,2,3);
-itemDePedido.Produto.ExibirInformaçõesProduto();*/
+ItemDePedido itemDePedido2 = new(p2,2,3);
+ItemDePedido itemDePedido3 = new(p3,2,3);
+
+//Atividade Semana 5 - 3 - Criar a classe Pedido
+List<ItemDePedido> pedidos = new(); 
+pedidos.Add(itemDePedido);
+pedidos.Add(itemDePedido2);
+pedidos.Add(itemDePedido3);
+
+Pedido pedido1 = new(cliente1, pedidos);
+pedido1.ExibirDetalhesPedido();*/
