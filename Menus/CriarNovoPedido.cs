@@ -38,13 +38,12 @@ internal class CriarNovoPedido : ListarNomesProdutos
                     itensPedidos.Add(produtoParaLista);
 
                     Console.WriteLine("------------------------------- \n");
-                    Console.WriteLine("Digite 0 para finalizar a operação \n");
+                    Console.WriteLine("Digite 0 para finalizar a operação; Digite qualquer outro numero para continuar \n");
                     controlador = int.Parse(Console.ReadLine()!);
-
-                    Pedido pedidoDoCliente = new(cliente, itensPedidos);
-                    ListaDePedidos.Add(pedidoDoCliente);
                 }
             }
+            Pedido pedidoDoCliente = new(cliente, itensPedidos);
+            ListaDePedidos.Add(pedidoDoCliente);
         }
         else
         {
