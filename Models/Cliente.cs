@@ -24,6 +24,7 @@ internal class Cliente:IIdentificar
 
     public void ExibirDadosCliente()
     {
+        Console.WriteLine($"-------------- Exibir dados do Cliente --------------");
         Console.WriteLine($"Dados do cliente {Nome}");
         Console.WriteLine($"CPF: {Cpf} ");
         Console.WriteLine($"Email: {Email} ");
@@ -35,6 +36,7 @@ internal class Cliente:IIdentificar
         Console.WriteLine($"Rua: {Endereco.Rua} ");
         Console.WriteLine($"Numero da casa: {Endereco.Numero} ");
         Console.WriteLine($"Complemento: {Endereco.Complemento} ");
+        Console.WriteLine("\n");
     }
     public string Identificacao()
     {
