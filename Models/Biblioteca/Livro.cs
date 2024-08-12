@@ -18,11 +18,27 @@ internal class Livro
 
     public void Emprestar()
     {
-        Emprestado = true;
+        if (Emprestado)
+        {
+            Console.WriteLine("\nEste livro já foi emprestado, aguarde o retorno\n");
+        }
+        else
+        {
+            Console.WriteLine($"Livro {Titulo} emprestado com sucesso");
+            Emprestado = true;
+        }
     }
     public void Devolver()
     {
-        Emprestado = false;
+        if (Emprestado)
+        {
+            Console.WriteLine($"\nLivro {Titulo} devolvido com sucesso\n");
+            Emprestado = false;
+        }
+        else
+        {
+            Console.WriteLine($"Não tem como devolver um livro que não foi emprestado");
+        }
     }
 
     public string VerificarLivro()
