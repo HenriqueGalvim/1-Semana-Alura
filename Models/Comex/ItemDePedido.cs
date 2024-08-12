@@ -1,5 +1,4 @@
-﻿namespace COMEX.Models;
-
+﻿namespace COMEX.Models.Comex;
 internal class ItemDePedido
 {
     public ItemDePedido(Produto produto)
@@ -15,10 +14,12 @@ internal class ItemDePedido
 
     public decimal PrecoUnitario { get; }
 
-    public decimal Subtotal {
-        get { 
+    public decimal Subtotal
+    {
+        get
+        {
             return Quantidade * PrecoUnitario;
-        } 
+        }
     }
 
     public void ExibirDetalhesDeItemPedido()

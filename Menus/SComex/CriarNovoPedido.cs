@@ -1,6 +1,7 @@
-﻿using COMEX.Models;
+﻿using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
 
-namespace COMEX.Menus;
+namespace COMEX.Menus.SComex;
 
 internal class CriarNovoPedido : ListarNomesProdutos
 {
@@ -26,7 +27,8 @@ internal class CriarNovoPedido : ListarNomesProdutos
         var cliente = ListaDeClientes.Find(
             (c) => c.Nome.Contains(nome));
 
-        if(cliente is not null) {
+        if (cliente is not null)
+        {
             while (controlador != 0)
             {
                 Console.WriteLine("Digite o nome do produto a ser adicionado em sua lista: ");

@@ -1,4 +1,4 @@
-namespace COMEX.Models;
+namespace COMEX.Models.Comex;
 internal class Endereco
 {
     public Endereco(string estado, string cidade, string bairro, string rua, int numero, string complemento)

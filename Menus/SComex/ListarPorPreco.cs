@@ -1,7 +1,6 @@
-﻿using COMEX.Models;
-
-namespace COMEX.Menus;
-
+﻿using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
+namespace COMEX.Menus.SComex;
 internal class ListarPorPreco : Menu
 {
     public override async Task ExecutarAsync(Dictionary<string, Produto> produtosRecebidos)

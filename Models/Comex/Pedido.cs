@@ -1,5 +1,6 @@
-﻿namespace COMEX.Models;
+﻿namespace COMEX.Models.Comex;
 using System;
+
 internal class Pedido
 {
     public Pedido(Cliente cliente, List<ItemDePedido> itens)
@@ -9,7 +10,8 @@ internal class Pedido
     }
 
     public Cliente Cliente { get; }
-    public DateTime Data {
+    public DateTime Data
+    {
         get
         {
 

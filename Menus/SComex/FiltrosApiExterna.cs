@@ -1,7 +1,7 @@
-﻿using COMEX.Menus;
-using COMEX.Models;
+﻿using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
 using System.Text.Json;
-
+namespace COMEX.Menus.SComex;
 internal class FiltrosApiExterna : Menu
 {
     public static async Task ListarTodosOsDados()

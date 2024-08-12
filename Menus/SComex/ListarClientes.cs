@@ -1,15 +1,16 @@
-﻿using COMEX.Models;
+﻿using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
 
-namespace COMEX.Menus;
+namespace COMEX.Menus.SComex;
 
-internal class ListarClientes:Menu
+internal class ListarClientes : Menu
 {
     public ListarClientes(List<Cliente> listaDeClientes)
     {
         ListaDeClientes = listaDeClientes;
     }
 
-    public List<Cliente> ListaDeClientes { get;}
+    public List<Cliente> ListaDeClientes { get; }
 
     public override async Task ExecutarAsync(Dictionary<string, Produto> produtos)
     {

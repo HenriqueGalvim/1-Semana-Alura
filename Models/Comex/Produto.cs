@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace COMEX.Models;
+namespace COMEX.Models.Comex;
 internal class Produto
 {
     public Produto(string nome, string descricao, decimal precoUnitario, int quantidade)
@@ -45,7 +45,7 @@ internal class Produto
     {
         try
         {
-           
+
             Console.WriteLine("\n**********************************\n");
             Console.WriteLine($"Nome do Produto: {Nome}");
             Console.WriteLine($"Descrição do Produto: {Descricao}");
@@ -53,9 +53,9 @@ internal class Produto
             Console.WriteLine($"Quantidade do Produto: {Quantidade}");
             Console.WriteLine("\n**********************************\n");
         }
-        catch(Exception e)
+        catch (Exception e)
         {
-            Console.WriteLine("Erro: ",e);
+            Console.WriteLine("Erro: ", e);
         }
     }
 

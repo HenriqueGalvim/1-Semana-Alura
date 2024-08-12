@@ -1,8 +1,9 @@
-﻿using COMEX.Models;
+﻿using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
 
-namespace COMEX.Menus;
+namespace COMEX.Menus.SComex;
 
-internal class CadastrarCliente:Menu
+internal class CadastrarCliente : Menu
 {
     public CadastrarCliente(List<Cliente> listaDeClientes)
     {
@@ -62,6 +63,6 @@ internal class CadastrarCliente:Menu
         {
             Console.WriteLine($"Erro: {ex}");
         }
-        
+
     }
 }

@@ -1,9 +1,9 @@
-﻿using COMEX.Models;
+﻿using COMEX.Models.Comex;
 
-namespace COMEX.Menus;
+namespace COMEX.Menus.SComex;
 
-internal class Menu 
-{ 
+internal class Menu
+{
 
     public static async Task LimparConsoleAdicionarTitulo()
     {
@@ -22,5 +22,5 @@ internal class Menu
         Console.WriteLine("Digite uma tecla para voltar ao menu principal");
         Console.ReadKey();
         Console.Clear();
-    }  
+    }
 }

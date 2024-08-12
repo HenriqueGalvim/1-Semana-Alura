@@ -1,8 +1,8 @@
-﻿using COMEX.Models;
+﻿using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
+namespace COMEX.Menus.SComex;
 
-namespace COMEX.Menus;
-
-internal class ListarNomesProdutos:Menu
+internal class ListarNomesProdutos : Menu
 {
     public override async Task ExecutarAsync(Dictionary<string, Produto> produtos)
     {

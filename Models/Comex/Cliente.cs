@@ -1,7 +1,7 @@
 using COMEX.Interfaces;
 
-namespace COMEX.Models;
-internal class Cliente:IIdentificar
+namespace COMEX.Models.Comex;
+internal class Cliente : IIdentificar
 {
     public Cliente(string nome, string cpf, string email, string profissao, string telefone, Endereco endereco)
     {

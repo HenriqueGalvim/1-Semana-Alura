@@ -1,7 +1,8 @@
 ﻿using System.Text.Json;
-using COMEX.Menus;
-using COMEX.Models;
+using COMEX.Models.Comex;
+using COMEX.Menus.SComex;
 
+namespace COMEX.Menus.SComex;
 internal class BuscarPelaApiExterna : Menu
 {
     public override async Task ExecutarAsync(Dictionary<string, Produto> produtosRecebidos)
