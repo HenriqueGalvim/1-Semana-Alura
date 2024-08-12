@@ -11,20 +11,13 @@ internal class Biblioteca
     public List<Livro> Livros { get; set; }
     public List<Usuario> Usuarios { get; set; }
 
-    /*
-     * AdicionarLivro(Livro livro)
-RemoverLivro(Livro livro)
-RegistrarUsuario(Usuario usuario)
-ExibirLivrosDisponiveis()
-     */
-
     public void AdicionarLivro(Livro livro)
     {
         Console.WriteLine($"\n Livro {livro.Titulo} Adicionado no acervo da Biblioteca \n");
         Livros.Add(livro);
     }
 
-    public void Removerlivro(Livro livro) 
+    public void Removerlivro(Livro livro)
     {
         Console.WriteLine($"\n Livro {livro.Titulo} Removido do acervo da Biblioteca \n");
         Livros.Remove(livro);
@@ -32,8 +25,16 @@ ExibirLivrosDisponiveis()
 
     public void RegistrarUsuario(Usuario usuario)
     {
-        Console.WriteLine($"\n Usuario {usuario.Nome} Registrado na Biblioteca \n");
-        Usuarios.Add(usuario);
+        var queryUsuario = Usuarios.FindAll(usuarioLista => usuarioLista.CPF.Equals(usuario.CPF));
+        if (queryUsuario.Count > 0)
+        {
+            Console.WriteLine("Já tem um usuario com este CPF cadastrado no sistema");
+        }
+        else
+        {
+            Console.WriteLine($"\n Usuario {usuario.Nome} Registrado na Biblioteca \n");
+            Usuarios.Add(usuario);
+        }
     }
 
     public void RemoverUsuario(Usuario usuario)

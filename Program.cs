@@ -1,5 +1,7 @@
 ﻿using COMEX.Models.Comex;
 using COMEX.Menus.SComex;
+using COMEX.Menus.SBiblioteca;
+using COMEX.Models.Biblioteca;
 
 async Task SistemaComex()
 {
@@ -62,6 +64,10 @@ async Task SistemaComex()
 
     await OpcoesMenuAsync();
 }
-SistemaComex();
+//SistemaComex();
+
+Biblioteca biblioteca = new();
+
+MenuBiblioteca.ExibirMenu(biblioteca);
 
 

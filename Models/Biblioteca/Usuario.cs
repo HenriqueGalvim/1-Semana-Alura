@@ -18,9 +18,16 @@ internal class Usuario
 
     public void EmprestarLivro(Livro livro)
     {
-        livro.Emprestar();
-        LivrosEmprestados.Add(livro);
-        LivrosEmprestadosHistorico.Add(livro);
+        if (LivrosEmprestados.Count < 3)
+        {
+            livro.Emprestar();
+            LivrosEmprestados.Add(livro);
+            LivrosEmprestadosHistorico.Add(livro);
+        }
+        else
+        {
+            Console.WriteLine("Só pode emprestar 3 livros no máximo por usuario");
+        }
     }
 
     public void DevolverLivro(Livro livro)
@@ -37,6 +44,14 @@ internal class Usuario
             Console.WriteLine("");
             item.ExibirInformacoes();
             Console.WriteLine("");
+        }
+    }
+
+    public void ExibirLivrosEmprestados()
+    {
+        foreach (var item in LivrosEmprestados)
+        {
+            item.ExibirInformacoes();
         }
     }
 }
