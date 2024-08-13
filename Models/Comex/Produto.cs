@@ -48,8 +48,8 @@ internal class Produto
 
             Console.WriteLine("\n**********************************\n");
             Console.WriteLine($"Nome do Produto: {Nome}");
-            Console.WriteLine($"Descrição do Produto: {Descricao}");
-            Console.WriteLine($"Preço Unitário Produto: {PrecoUnitario}");
+            Console.WriteLine($"Descricao do Produto: {Descricao}");
+            Console.WriteLine($"Preço Unitario Produto: {PrecoUnitario}");
             Console.WriteLine($"Quantidade do Produto: {Quantidade}");
             Console.WriteLine("\n**********************************\n");
         }
