@@ -11,10 +11,11 @@ internal class MenuBiblioteca
     {
         Console.WriteLine("\n-- Sistema Biblioteca --\n");
         Console.WriteLine("Digite 1. Para Registrar Usuário");
-        Console.WriteLine("Digite 2. Para Exibir Todos os Livros");
-        Console.WriteLine("Digite 3. Para Exibir Livros Disponíveis para empréstimo");
-        Console.WriteLine("Digite 4. Para Emprestar Livro");
-        Console.WriteLine("Digite 5. Para Devolver Livro\n");
+        Console.WriteLine("Digite 2. Para Adicionar um livro");
+        Console.WriteLine("Digite 3. Para Exibir Todos os Livros");
+        Console.WriteLine("Digite 4. Para Exibir Livros Disponíveis para empréstimo");
+        Console.WriteLine("Digite 5. Para Emprestar Livro");
+        Console.WriteLine("Digite 6. Para Devolver Livro\n");
         Console.WriteLine("Digite 0. Para Sair do Sistema\n");
         Console.Write("Resposta: ");
         int controle = int.Parse(Console.ReadLine()!);
@@ -28,35 +29,46 @@ internal class MenuBiblioteca
             case 1:
                 Console.Clear();
                 RegistrarUsuario.Registrar(bibliotecaSistema);
-
-                Console.WriteLine("Digite qualquer tecla para voltar ao menu inicial: ");
-                Console.ReadKey();
-                Console.Clear();
-                ExibirMenu(bibliotecaSistema);
+                VoltarMenu(bibliotecaSistema);
                 break;
             case 2:
                 Console.Clear();
-                bibliotecaSistema.ExibirTodosLivros();
-                ExibirMenu(bibliotecaSistema);
+                AdicionarLivro.Adicionar(bibliotecaSistema);
+                VoltarMenu(bibliotecaSistema);
                 break;
             case 3:
-                bibliotecaSistema.ExibirLivrosDisponiveis();
-                ExibirMenu(bibliotecaSistema);
+                Console.Clear();
+                bibliotecaSistema.ExibirTodosLivros();
+                VoltarMenu(bibliotecaSistema);
                 break;
             case 4:
                 Console.Clear();
-                EmprestarLivro.Emprestar(bibliotecaSistema);
-                ExibirMenu(bibliotecaSistema);
+                bibliotecaSistema.ExibirLivrosDisponiveis();
+                VoltarMenu(bibliotecaSistema);
                 break;
             case 5:
                 Console.Clear();
+                EmprestarLivro.Emprestar(bibliotecaSistema);
+                VoltarMenu(bibliotecaSistema);
+                break;
+            case 6:
+                Console.Clear();
                 DevolverLivro.Devolver(bibliotecaSistema);
-                ExibirMenu(bibliotecaSistema);
+                VoltarMenu(bibliotecaSistema);
                 break;
             default:
+                Console.Clear();
                 Console.WriteLine("Ação inválida");
-                ExibirMenu(bibliotecaSistema);
+                VoltarMenu(bibliotecaSistema);
                 break;
         }
+    }
+
+    public static void VoltarMenu(Biblioteca bibliotecaSistema)
+    {
+        Console.WriteLine("Digite qualquer tecla para voltar ao menu inicial: ");
+        Console.ReadKey();
+        Console.Clear();
+        ExibirMenu(bibliotecaSistema);
     }
 }

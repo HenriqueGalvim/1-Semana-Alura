@@ -13,8 +13,16 @@ internal class Biblioteca
 
     public void AdicionarLivro(Livro livro)
     {
-        Console.WriteLine($"\n Livro {livro.Titulo} Adicionado no acervo da Biblioteca \n");
-        Livros.Add(livro);
+        var queryLivros = Livros.Find(livros => livros.ISBN.Equals(livro.ISBN));
+        if (queryLivros is not null)
+        {
+            Console.WriteLine("Já existe um livro com o mesmo ISBN cadastrado");
+        }
+        else
+        {
+            Livros.Add(livro);
+            Console.WriteLine($"\n Livro {livro.Titulo} Adicionado no acervo da Biblioteca \n");
+        }
     }
 
     public void Removerlivro(Livro livro)

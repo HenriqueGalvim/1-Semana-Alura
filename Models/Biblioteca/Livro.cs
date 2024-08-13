@@ -1,8 +1,8 @@
 ﻿namespace COMEX.Models.Biblioteca;
 
 internal class Livro
-{
-    public Livro(string titulo,string autor, string iSBN, DateTime dataPublicacao, bool emprestado)
+{ 
+    public Livro(string titulo,string autor, string iSBN, DateOnly dataPublicacao, bool emprestado)
     {
         Titulo = titulo;
         Autor = autor;
@@ -13,7 +13,7 @@ internal class Livro
     public string Titulo { get; }
     public string Autor { get; }
     public string ISBN { get; }
-    public DateTime DataPublicacao { get; }
+    public DateOnly DataPublicacao { get; }
     public bool Emprestado { get; set; }
 
     public void Emprestar()
