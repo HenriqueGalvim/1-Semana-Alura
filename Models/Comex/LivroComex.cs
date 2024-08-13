@@ -11,9 +11,9 @@ internal class LivroComex : Produto, IIdentificar
         QuantidadePaginas = quantidadePaginas;
     }
 
-    public override void ExibirInformaçõesProduto()
+    public override void ExibirInformacoesProduto()
     {
-        base.ExibirInformaçõesProduto();
+        base.ExibirInformacoesProduto();
         Console.WriteLine($"ISBN: {Isbn}");
         Console.WriteLine($"Total de paginas: {QuantidadePaginas}");
     }

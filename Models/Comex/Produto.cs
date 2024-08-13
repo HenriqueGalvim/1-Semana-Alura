@@ -40,22 +40,21 @@ internal class Produto
             quantidade = value;
         }
     }
-
-    public virtual void ExibirInformaçõesProduto()
+            
+    public virtual void ExibirInformacoesProduto()
     {
         try
         {
 
-            Console.WriteLine("\n**********************************\n");
-            Console.WriteLine($"Nome do Produto: {Nome}");
-            Console.WriteLine($"Descricao do Produto: {Descricao}");
-            Console.WriteLine($"Preço Unitario Produto: {PrecoUnitario}");
-            Console.WriteLine($"Quantidade do Produto: {Quantidade}");
-            Console.WriteLine("\n**********************************\n");
+            Console.WriteLine("Adicionando Novo Produto\n");
+            Console.WriteLine($"Nome do Produto:{Nome}");
+            Console.WriteLine($"Descricao do Produto:{Descricao}");
+            Console.WriteLine($"Preco Unitario Produto:{PrecoUnitario}");
+            Console.WriteLine($"Quantidade do Produto:{Quantidade}");
         }
         catch (Exception e)
         {
-            Console.WriteLine("Erro: ", e);
+            Console.WriteLine("Erro:", e);
         }
     }
 

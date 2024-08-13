@@ -11,9 +11,9 @@ internal class Eletronico : Produto
         Potencia = potencia;
     }
 
-    public override void ExibirInformaçõesProduto()
+    public override void ExibirInformacoesProduto()
     {
-        base.ExibirInformaçõesProduto();
+        base.ExibirInformacoesProduto();
         Console.WriteLine($"Voltagem: {Voltagem} V");
         Console.WriteLine($"Potência: {Voltagem} W");
     }

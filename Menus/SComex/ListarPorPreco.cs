@@ -18,7 +18,7 @@ internal class ListarPorPreco : Menu
             foreach (var produto in queryAllProdutos)
             {
                 Console.WriteLine("\n------------------------------");
-                produto.Value.ExibirInformaçõesProduto();
+                produto.Value.ExibirInformacoesProduto();
                 Console.WriteLine("--------------------------------\n");
             }
             VoltarMenu();

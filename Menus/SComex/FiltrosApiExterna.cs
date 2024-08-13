@@ -15,7 +15,7 @@ internal class FiltrosApiExterna : Menu
                 var deserializandoJson = JsonSerializer.Deserialize<List<Produto>>(resposta!);
                 foreach (var item in deserializandoJson!)
                 {
-                    item.ExibirInformaçõesProduto();
+                    item.ExibirInformacoesProduto();
                 }
             }
         }
@@ -37,7 +37,7 @@ internal class FiltrosApiExterna : Menu
 
                 foreach (var item in produtosMaiorPreco)
                 {
-                    item.ExibirInformaçõesProduto();
+                    item.ExibirInformacoesProduto();
                 }
             }
         }
@@ -60,7 +60,7 @@ internal class FiltrosApiExterna : Menu
 
                 foreach (var item in produtosMaiorPreco)
                 {
-                    item.ExibirInformaçõesProduto();
+                    item.ExibirInformacoesProduto();
                 }
             }
         }
@@ -82,7 +82,7 @@ internal class FiltrosApiExterna : Menu
 
                 foreach (var item in produtosMaiorPreco)
                 {
-                    item.ExibirInformaçõesProduto();
+                    item.ExibirInformacoesProduto();
                 }
             }
         }
@@ -105,7 +105,7 @@ internal class FiltrosApiExterna : Menu
 
                 foreach (var item in produtosMaiorPreco)
                 {
-                    item.ExibirInformaçõesProduto();
+                    item.ExibirInformacoesProduto();
                 }
             }
         }

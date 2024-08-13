@@ -15,7 +15,7 @@ internal class ListarDetalhesUnicoProduto : ListarNomesProdutos
         {
             if (produtoCadastrados == produto)
             {
-                produtos[produto].ExibirInformaçõesProduto();
+                produtos[produto].ExibirInformacoesProduto();
             }
         }
         VoltarMenu();

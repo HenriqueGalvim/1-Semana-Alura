@@ -29,12 +29,12 @@ async Task SistemaComex()
     async Task OpcoesMenuAsync()
     {
         Console.WriteLine($"\n------------- COMEX -------------\n");
-        Console.WriteLine("Digite as seguintes opções para efetuar a operação:");
+        Console.WriteLine("Digite as seguintes opcoes para efetuar a operacao:");
         Console.WriteLine("1 - Ver estoque");
         Console.WriteLine("2 - Adicionar produto");
         Console.WriteLine("3 - Verificar estoque de um produto especifico");
         Console.WriteLine("4 - Remover produto");
-        Console.WriteLine("5 - Listar produtos por Preço");
+        Console.WriteLine("5 - Listar produtos por Preco");
         Console.WriteLine("6 - Listar produtos pelo Nome");
         Console.WriteLine("7 - Buscar pela API externa");
         Console.WriteLine("8 - Criar novo Pedido");
@@ -57,11 +57,9 @@ async Task SistemaComex()
         }
         else
         {
-            Console.WriteLine("Opção inválida");
+            Console.WriteLine("Opcao invalida");
         }
     }
-
-
     await OpcoesMenuAsync();
 }
 //SistemaComex();

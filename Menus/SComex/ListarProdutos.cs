@@ -16,7 +16,7 @@ internal class ListarProdutos : Menu
             foreach (var produto in produtos)
             {
                 Console.WriteLine("\n------------------------------");
-                produto.Value.ExibirInformaçõesProduto();
+                produto.Value.ExibirInformacoesProduto();
                 Console.WriteLine("--------------------------------\n");
             }
         }
