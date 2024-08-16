@@ -60,7 +60,7 @@ internal class MenuBiblioteca
                     break;
                 default:
                     Console.Clear();
-                    Console.WriteLine("Acao invalida");
+                    Console.WriteLine("Ação invalida");
                     VoltarMenu(bibliotecaSistema);
                     break;
             }

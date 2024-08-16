@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 namespace COMEX.Models.Comex;
 internal class Produto
 {
+
     public Produto(string nome, string descricao, decimal precoUnitario, int quantidade)
     {
         Nome = nome;

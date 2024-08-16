@@ -7,7 +7,7 @@ internal class ItemDePedido
         Quantidade = produto.Quantidade;
         PrecoUnitario = produto.PrecoUnitario;
     }
-
+    
     public Produto Produto { get; }
 
     public int Quantidade { get; }

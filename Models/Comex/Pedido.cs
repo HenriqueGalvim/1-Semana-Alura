@@ -27,13 +27,10 @@ internal class Pedido
 
     public List<ItemDePedido> Itens { get; }
 
+    //Ajeitado
     public decimal Total
     {
-        get
-        {
-
-            return Itens.Sum(item => item.PrecoUnitario);
-        }
+        get; private set;
     }
 
     public void ExibirDetalhesPedido()
@@ -62,6 +59,7 @@ internal class Pedido
     public void AdicionarItem(ItemDePedido item)
     {
         Itens.Add(item);
+        Total = item.Subtotal;
         Data = DateTime.Now;
         Console.WriteLine($"{item.Produto.Nome} Adicionado na Lista de Itens");
     }
