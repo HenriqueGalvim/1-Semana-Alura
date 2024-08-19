@@ -3,7 +3,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace praticaALuraCerto.Menus.SBiblioteca;
 
-internal class AdicionarLivro
+internal static class AdicionarLivro
 {
     public static void Adicionar(Biblioteca biblioteca)
     {
