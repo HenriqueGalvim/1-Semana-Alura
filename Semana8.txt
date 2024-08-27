@@ -1,0 +1,98 @@
+-- Conhecendo o protocolo HTTP
+
+1. O que é HTTP e qual o seu papel na comunicação web?
+Resposta: Ele é um protocolo de comunicação usado para transferir dados na web, seja documentos HTML, json e entre outro.
+
+2. Explique a arquitetura do HTTP e os papéis do cliente (navegador) e do servidor (backend).
+Resposta: Tem como sua arquitetura o Cliente, o servidor backend e o servidor frontend, onde o cliente, em seu navegador, faz uma requisição e os servidores seguintes tratam e enviam sua resposta, o front responsavel pela visualização e o back responsavel pela lógica por trás dos panos da aplicação.
+
+3. Quais são as camadas da arquitetura da internet e como o HTTP se relaciona com a camada de aplicação?
+Resposta: São elas: Física; Enlace; Rede; Transporte e Aplicação. Pois ele é um protocolo da camada de aplicação.
+
+4. O que é um protocolo na comunicação entre dispositivos? Como o HTTP define as regras dessa "conversa"?
+Resposta: É como se fosse a conversa entre o cliente e servidor, onde um requisita e outro retorna uma resposta. Define regras para essa interação pois não pode haver uma requisição sem uma resposta, além disso, sempre tem que ter um cliente e um servidor. Outra regra é que sempre é o cliente que pede, e não o servidor.
+
+5. Cite e explique um protocolo alternativo ao HTTP, como o P2P. Quais são as principais diferenças entre ele e o HTTP?
+Resposta: A ideia do P2P é justamente tirar um pouco da responsabilidade do servidor e colocar para o cliente, tendo em vista que caso o fluxo de dados seja muito grande, o servidor pode acabar ficando sobrecarregado, entretanto, se distribuir essa responsabilidade para o cliente, vai mitigar essa sobrecarga.
+
+-- Aprendendo sobre URLs
+
+1. O que é uma URL e como ela é estruturada?
+Resposta: A URL é como se fosse o endereço do site, e ela é estruturada tendo o protocolo para acessso,o domínio e a porta e no final, o caminho que queremos acessar desse site.
+
+2. Qual é a diferença entre uma URI e uma URL?
+Resposta: Uma URL é uma URI mas nem todas as URIs são URLs, tendo em vista que as URIs, são como se fosse identificadores de um recurso, entretanto, não define o endereço e nem o protocolo.
+
+3. Qual é a porta padrão usada pelo HTTP e pelo HTTPS? E quais portas estão disponíveis para uso livre?
+Resposta: Para o http é a porta 80 e o https a porta 443. As portas livres para uso são da 1023 até a 65535
+
+4. Como um endereço IP se transforma em um nome de domínio? Descreva o processo e o papel do DNS.
+Resposta: Por meio do DNS, ele associa um nome mais fácil de lembrar com o endereço IP. O processo é que há uma tabela enorme com vários IPs e DNSs e cada DNS é associado a um IP, então na hora de fazer uma requisição ou acessar um site, apontamos para o DNS que aponta para o IP.
+
+5. Por que é importante escolher nomes de URLs que sejam fáceis de entender para qualquer pessoa?
+Resposta: Pois serão mais fáceis de lembrar e amigáveis de serem utilizados pelos usuários no geral.
+
+-- Inspecionando o protocolo HTTP
+
+1. Qual é o formato das mensagens HTTP e quais são suas principais partes?
+Resposta: O formato é esse: O metodo que queremos utilizar, para qual caminho queremos fazer a requisição e por ultimo a versão do http. 
+
+2. Quais são os principais métodos HTTP e para que cada um deles é utilizado?
+Resposta: São eles: GET;POST;PUT;DELETE; O GET para pedir informações; O POST para enviar informações; O PUT para atualizar algo que já existe; E o DELETE para deletar algo.
+
+3. O que significa dizer que um servidor HTTP é "stateless"?
+Resposta: Significa que os servidores não guardam estados, ou seja, uma requisição feita anteriormente não fica armazenada, então em um caso de autenticação, é necessário sempre ficar meio que lembrando o servidor que é você mesmo que esta acessando e que tem autoridade pra isso.
+
+4. O que são Sessões e Cookies, e como eles ajudam a "lembrar" o servidor?
+Resposta: As sessões e cookies são formas de lembrar o servidor, o primeiro se caracterizando por utilizar a geração de um token e mostra-lo para o servidor de forma continua, para ele lembrar quem está o acessando. O segundo é um mecanismo o qual é um pequeno documento criado pela a aplicação web para armazenar informações do usuário no navegador.
+
+5. Quais são os significados dos seguintes códigos de status HTTP: 200, 201, 401, 404, 403 e familia 500?
+Resposta: O 200 significa "ok"; 201 que foi criado; O 401 não autorizado; o 404 não encontrado e a família do 500 erro interno do servidor
+
+-- Protegendo a Web com HTTPS
+
+1. O que é HTTPS e como ele difere do HTTP?
+Resposta: o HTTPS é a versão segura do HTTP, onde o primeiro, se difere principalmente em relação a segurança dos dados trafegados, pois o segundo, é possível captar os dados durante a execução da requisição, criando assim uma grande vunerabilidade.
+
+2. Qual é o papel do TLS no funcionamento do HTTPS?
+Resposta: O TLS é um protocolo que corresponde à segurança da camada de transporte sobre o TCP.
+
+3. Como funciona a criptografia assimétrica em transações cliente-servidor usando HTTPS?
+Resposta: É uma forma de garantir o acesso mediante identificação autorizada, onde quem quer ter acesso, além de ter a identificação, precisa ter a chave para poder acessar. Falando sobre a aplicação, a chave fica armazenada no servidor e este, envia o certificado digital para o cliente. E o cliente também precisa ter uma chave para descriptografar os dados . 
+
+4. O que é criptografia simétrica e como ela se diferencia da criptografia assimétrica?
+Resposta: A criptografia simétrica, onde este usa a mesma chave para criptografar e descriptografar os dados, semelhante as portas ou armários da vida real, onde usamos uma mesma chave para abri-las ou tranca-las. Se diferencia da assimética pois por ser a mesma chave, consegue ser mais rápido que a anterior, a qual tem um processamento mais lento.
+
+5. Por que a criptografia simétrica é considerada mais rápida que a assimétrica?
+Resposta: É considerada mais rápida pois é a mesma chave, então o processo tende a ser mais ágil, diferente da assimétrica, onde por serem chaves diferentes, o processo é mais demorado.
+
+-- Controlando o HTTP
+
+1. Qual é a diferença principal entre os métodos GET e POST em termos de como os parâmetros são enviados?
+Resposta: O GET passamos eles pelas query de url, já no POST é passado no corpo da requisição.
+
+2. O que são Query Parameters e como eles são usados em uma requisição GET?
+Resposta: Eles são paramêtros de consulta que queremos ler ao fazer a requisição GET
+
+3. Como os dados são transmitidos no corpo de uma requisição POST?
+Resposta: Os dados podem ser enviados utilizando diferentes formatos, como JSON, XML, etc. Entretanto, cabe utilizar o formato ideal dependendo do propósito da aplicação.
+
+4. Quais são as limitações do uso de parâmetros com o método GET?
+Resposta: Pois a quantidade de parâmetros é definido pelo navegador, pois a especificação do HTTP não define um número máximo de parâmetros para uma URL. 
+
+5. Em que situações é preferível usar POST em vez de GET para enviar dados ao servidor?
+Resposta: Quando a requisição for muito grande, é preferivel utilizar o POST ao invés do GET
+
+-- Conhecendo as evoluções do HTTP
+
+1. Quais são as principais melhorias introduzidas pelo HTTP/2 em relação ao HTTP/1.x?
+Resposta: As principais melhorias seria a multiplexação, o mecanismo de compactação de cabeçalho e o de server push.
+
+2. Como a multiplexação de streams no HTTP/2 melhora a eficiência da comunicação em comparação ao HTTP/1.x?
+Resposta: Ele pega requisições que acontecem em paralelo e as junta em uma mesma conexão TCP, assim, melhorando a performance da aplicação.
+
+3. Qual é o papel da compressão de cabeçalhos no HTTP/2 e como isso beneficia a performance das requisições?
+Resposta: Tem o papel de compactar o cabeçalho que era em formato de texto para um cabeçalho binário, o qual pode ser enviado pela rede, economizando assim recursos.
+
+4. Comente sobre o HTTP3 e quais evoluções ele traz.
+Resposta: O HTTP utiliza o protocolo QUIC, o qual é uma evolução do UDP criado com o objetivo de aprimora-lo, pois neste, ainda era possível que uma mensagem não chegasse, para algumas situações isto é relevado, entretanto, para outras pode acabar gerando prejuízos. As evoluções que ele traz seria a já rodar o TLS apenas de usa-lo, ou seja, ele o HTTPS já vem embutido.
